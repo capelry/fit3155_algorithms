@@ -2,13 +2,13 @@ from __future__ import annotations
 from .node import Node
 from typing import Any
 
-class SinglyLinkedList:
-    def __init__(self) -> SinglyLinkedList:
+class LinkedList:
+    def __init__(self):
         self.__head = None
         self.__tail = None
         self.__count = 0
 
-        
+
     @property
     def head(self) -> Node | None:
         """ Get the Node pointed by the head pointer.
@@ -33,6 +33,11 @@ class SinglyLinkedList:
         return self.__count
 
 
+class SinglyLinkedList(LinkedList):
+    def __init__(self) -> SinglyLinkedList:
+        super.__init__()
+
+
     def append(self, value:Any) -> None:
         """ Append a value into the Singly Linked List.
 
@@ -51,3 +56,8 @@ class SinglyLinkedList:
         new_node.right = None
         self.tail = new_node
         self.__count += 1
+
+        
+class DoublyLinkedList(LinkedList):
+    def __init__(self):
+        super.__init__()
