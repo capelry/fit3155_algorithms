@@ -44,7 +44,13 @@ class BinomialTree:
             return BinomialTree(order, rnode_2)
 
     
-    def __init__(self, order, root):
+    def __init__(self, order:int, root:BNode):
+        """ Create a Binomial Tree
+
+        Args:
+            order (int): The order of the Binomial Tree
+            root (BNode): Root node of the Binomial Tree
+        """
         self.order = order
         self.root = root
 
