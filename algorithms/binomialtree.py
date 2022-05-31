@@ -55,6 +55,28 @@ class BinomialTree:
         self.root = root
 
         
+    @property
+    def order(self) -> int:
+        """ Get the order of the Binomial Tree.
+
+        Returns:
+            int: The order of the Binomial Tree.
+        """
+        return self.__order
+
+        
+    @order.setter
+    def order(self, order:int) -> None:
+        """ Set the order of the Binomial Tree.
+
+        Args:
+            order (int): The order of the Binomial Tree.
+        """
+        if not isinstance(order, int):
+            raise TypeError(f"Expected an int type for order but was given {order.__class__.__name__}")
+        self.__order = order
+
+
     def __repr__(self):
         return f"BinomialTree(order={self.order},root={self.root})"
 
