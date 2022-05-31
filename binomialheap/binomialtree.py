@@ -26,7 +26,7 @@ class BinomialTree:
         # Increase order of tree by 1
         order = tree_1.order + 1
         rnode_1, rnode_2 = tree_1.root, tree_2.root
-        if rnode_1.key <= rnode_2.key:
+        if rnode_1<= rnode_2:
             # Merge tree 1 into tree 2 using root nodes
             rnode_2.parent = rnode_1
             if rnode_1.child is not None: # Fix sibling pointers
