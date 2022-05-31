@@ -78,3 +78,7 @@ class BNode(Node):
         if degree < 0:
             raise ValueError("The degree of a Binomial Node cannot be less than zero.")
         self.__degree = degree
+
+        
+    def __repr__(self):
+        return f"BinomialNode(key={self.key}, degree={self.degree}"
