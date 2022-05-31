@@ -2,6 +2,7 @@
 # and then cached as a normal attribute for the life of the instance. Similar
 # to property(), with the addition of caching. Useful for expensive computed
 # properties of instances that are otherwise effectively immutable.
+from __future__ import annotations
 from functools import cached_property
 from datastructure_utils import BNode
 
@@ -88,7 +89,7 @@ class BinomialTree:
 
         
     @root.setter
-    def root(self, root:BNode | None) -> None:
+    def root(self, root:BNode|None) -> None:
         """ set the root of the Binomial Tree
 
         Args:
