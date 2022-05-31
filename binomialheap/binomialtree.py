@@ -50,7 +50,7 @@ class BinomialTree:
 
         
     def __repr__(self):
-        return f"BinomialTree(order={self.order}"
+        return f"BinomialTree(order={self.order},root={self.root})"
 
         
 def create_b0_tree(key):
