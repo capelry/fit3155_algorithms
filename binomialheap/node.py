@@ -1,3 +1,7 @@
+""" 
+Authors: Cameron Britton, John Emerson Requizo
+"""
+
 
 class Node:
     """ Node Class specific for Binomial Heaps
