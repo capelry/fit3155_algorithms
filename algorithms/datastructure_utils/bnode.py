@@ -3,7 +3,7 @@ Author: Cameron Britton, John Requizo
 """
 from __future__ import annotations
 from typing import Any
-from node import Node
+from .node import Node
 
 
 class BNode(Node):
@@ -48,7 +48,7 @@ class BNode(Node):
         Raises:
             TypeError: Parent has to be of type Node or it's subclasses or None.
         """
-        if not isinstance(parent, Node) or not isinstance(parent, None):
+        if not isinstance(parent, Node) and parent is not None:
             raise TypeError(f"Expected {self.__class__.__name__} but was given {parent.__class__.__name__}")
         self.__parent = parent
 
