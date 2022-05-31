@@ -20,7 +20,28 @@ class BinomialTree:
             tree_1 (BinomialTree): First Binomial Tree 
             tree_2 (BinomialTree): The other Binomial Tree
         """
-        pass
+        if tree_1.order != tree_2.order:
+            raise ValueError("Both Trees must have the same order.")
+        
+        # Increase order of tree by 1
+        order = tree_1.order + 1
+        rnode_1, rnode_2 = tree_1.root, tree_2.root
+        if rnode_1.key <= rnode_2.key:
+            # Merge tree 1 into tree 2 using root nodes
+            rnode_2.parent = rnode_1
+            if rnode_1.child is not None: # Fix sibling pointers
+                rnode_2.sibling = rnode_1.child
+            rnode_1.child = rnode_2
+            rnode_1.degree += 1
+            return BinomialTree(order, rnode_1)
+        else:
+            # Mergre tree 2 into tree 1 using root nodes
+            rnode_1.parent = rnode_2
+            if rnode_2.child is not None:
+                rnode_1.sibling = rnode_2.child
+            rnode_2.child = rnode_1
+            rnode_2.degree += 1
+            return BinomialTree(order, rnode_2)
 
     
     def __init__(self, order, root):
@@ -34,7 +55,8 @@ def create_b0_tree(key):
     Args:
         key (Any): The key of the root node for the Binomial Tree
     """
-    return Node(key, 0)
+    root = Node(key, 0)
+    return BinomialTree(0, root)
 
     
 def create_bn_tree(n, *args):
