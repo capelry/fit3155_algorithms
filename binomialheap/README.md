@@ -8,3 +8,9 @@
 - [ ] **Merge**: merges two heaps into one
 - [ ] **Decrease-key**: decreases the elements key
 - [ ] **Delete**: removes an element from the heap
+
+# Binomial Tree
+
+## Operation Implementation
+
+- [] **Merge**: Merge two binomial trees of order Bk into one order Bk + 1 tree
