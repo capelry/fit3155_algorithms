@@ -13,4 +13,4 @@
 
 ## Operation Implementation
 
-- [/] **Merge**: Merge two binomial trees of order Bk into one order Bk + 1 tree
+- [x] **Merge**: Merge two binomial trees of order Bk into one order Bk + 1 tree
