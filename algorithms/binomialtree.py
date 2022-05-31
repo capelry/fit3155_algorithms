@@ -77,6 +77,28 @@ class BinomialTree:
         self.__order = order
 
 
+    @property
+    def root(self) -> BNode:
+        """ Get the root of the Binomial Tree.
+
+        Returns:
+            BNode: The root of the Binomial Tree
+        """
+        return self.__root
+
+        
+    @root.setter
+    def root(self, root:BNode | None) -> None:
+        """ set the root of the Binomial Tree
+
+        Args:
+            root (BNode | None): The root of the Binomial Tree.
+        """
+        if not isinstance(root, BNode) and root is not None:
+            raise TypeError(f"Expected a BNode type for root but was given {root.__class__.__name__}")
+        self.__root = root
+
+
     def __repr__(self):
         return f"BinomialTree(order={self.order},root={self.root})"
 
