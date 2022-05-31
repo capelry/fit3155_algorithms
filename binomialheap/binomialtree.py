@@ -49,6 +49,10 @@ class BinomialTree:
         self.root = root
 
         
+    def __repr__(self):
+        return f"BinomialTree(order={self.order}"
+
+        
 def create_b0_tree(key):
     """ Create an order 0 Binomial Tree
 
