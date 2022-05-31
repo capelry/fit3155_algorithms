@@ -60,7 +60,7 @@ def create_b0_tree(key):
 
     
 def create_bn_tree(n, *args):
-    """_summary_
+    """ Create an order N Binomial Tree
 
     Args:
         n (int): n is the degree of the Binomial Tree
@@ -73,7 +73,7 @@ def create_bn_tree(n, *args):
     pass
 
     keys = sorted(args)
-    if n == 1:
+    if n == 0:
         return create_b0_tree(keys[0])
 
     tree_stack = []
