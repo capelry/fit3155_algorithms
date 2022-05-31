@@ -74,7 +74,6 @@ def create_bn_tree(n, *args):
         raise ValueError(f"Not enough keys for a N={n} Order Binomial Tree. Requires {n*2 - len(args)} extra keys.")
     if n*2 < len(args):
         raise ValueError(f"Too many keys for a N={n} Order Binomial Tree. Requires {len(args) - n*2} fewer keys.")
-    pass
 
     keys = sorted(args)
     if n == 0:
