@@ -44,7 +44,7 @@ class Node:
         Raises:
             TypeError: left has to be of type Node or None.
         """
-        if not isinstance(left, Node) or not isinstance(left, None):
+        if not isinstance(left, Node) and left is not None:
             raise TypeError(f"Expected {self.__class__.__name__} but was given {left.__class__.__name__}")
         self.__left = left
 
@@ -69,7 +69,7 @@ class Node:
         Raises:
             TypeError: right has to be of type Node or None.
         """
-        if not isinstance(right, Node) or not isinstance(right, Node):
+        if not isinstance(right, Node) and right is not None:
             raise TypeError(f"Expected {self.__class__.__name__} but was given {right.__class__.__name__}")
         self.__right = right
 
