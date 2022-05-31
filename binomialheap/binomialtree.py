@@ -50,4 +50,19 @@ def create_bn_tree(n, *args):
         raise ValueError(f"Too many keys for a N Order Binomial Tree. Requires {len(args) - n*2} fewer keys.")
     pass
 
+    keys = sorted(args)
+    if n == 1:
+        return create_b0_tree(keys[0])
 
+    tree_stack = []
+    # Loop through all the keys and create a Binomial Tree of order 0
+    # Merge them if there are more than 2 Binomial Trees together
+    for key in keys:         
+        tree = create_b0_tree(key)
+        tree_stack.append(tree)
+        if len(tree_stack) == 2:
+            # Merge the two Binomial Trees
+            tree = BinomialTree.merge(tree_stack.pop(), tree_stack.pop())
+            tree_stack.append(tree)
+    bn_tree = tree_stack.pop()
+    return bn_tree
