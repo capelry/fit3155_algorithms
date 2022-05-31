@@ -5,8 +5,6 @@ Authors: Cameron Britton, John Emerson Requizo
 from __future__ import annotations
 from typing import Any
 
-from numpy import isin
-
 
 class Node:
     """ Node Class specific for Binomial Heaps
@@ -102,5 +100,3 @@ class Node:
         
     def __repr__(self):
         return f"Node (key={self.key},degree={self.degree})"
-
-        
