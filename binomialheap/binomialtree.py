@@ -67,9 +67,9 @@ def create_bn_tree(n, *args):
         *args (int): the keys for each Binomial Tree
     """
     if n*2 > len(args):
-        raise ValueError(f"Not enough keys for a N Order Binomial Tree. Requires {n*2 - len(args)} extra keys.")
+        raise ValueError(f"Not enough keys for a N={n} Order Binomial Tree. Requires {n*2 - len(args)} extra keys.")
     if n*2 < len(args):
-        raise ValueError(f"Too many keys for a N Order Binomial Tree. Requires {len(args) - n*2} fewer keys.")
+        raise ValueError(f"Too many keys for a N={n} Order Binomial Tree. Requires {len(args) - n*2} fewer keys.")
     pass
 
     keys = sorted(args)
@@ -82,9 +82,10 @@ def create_bn_tree(n, *args):
     for key in keys:         
         tree = create_b0_tree(key)
         tree_stack.append(tree)
-        if len(tree_stack) == 2:
-            # Merge the two Binomial Trees
+        # Try to merge the two Binomial Trees
+        while len(tree_stack) >= 2 and tree_stack[-1].order == tree_stack[-2].order:
             tree = BinomialTree.merge(tree_stack.pop(), tree_stack.pop())
             tree_stack.append(tree)
+
     bn_tree = tree_stack.pop()
     return bn_tree
