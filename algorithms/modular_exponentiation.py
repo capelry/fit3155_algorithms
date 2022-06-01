@@ -22,10 +22,10 @@ def mod_exp(a:int, b:int, n:int) -> int:
     # Key property of modular arithmetic:
     # x * y mod z = (x mod z * y mod z) mod z
 
-    # Repeated squaring
     # Base case
     x = a**(2**0) % n
     result = 1
+    # Repeated squaring
     for i in range(1, len(binary_rep)):
         x = (x * x) % n
         if binary_rep[i] == "1":
