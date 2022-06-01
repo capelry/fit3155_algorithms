@@ -3,7 +3,6 @@ Author: Cameron Britten, John Requizo
 
 Week 8: semi-Numerical Algorithms
 """
-import math
 
 
 def mod_exp(a:int, b:int, n:int) -> int:
