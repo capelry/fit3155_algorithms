@@ -1,6 +1,6 @@
 from __future__ import annotations
 from .node import Node
-from typing import Any
+from typing import Any, List, Tuple
 
 class LinkedList:
     def __init__(self):
@@ -34,8 +34,11 @@ class LinkedList:
 
 
 class SinglyLinkedList(LinkedList):
-    def __init__(self) -> SinglyLinkedList:
+    def __init__(self, items:List|Tuple=None) -> SinglyLinkedList:
         super.__init__()
+        if items is not None:
+            for item in items:
+                self.append(item)
 
 
     def append(self, value:Any) -> None:
