@@ -1,3 +1,5 @@
+import numpy as np
+
 def processZPrefix(pat):
       '''
       input: pattern
