@@ -4,5 +4,5 @@ from Tableau_LP import tableua
 objective = [6, 5, 1]
 # rest of coeffs
 # x + y <= 5 and 3x + 2y <= 12
-coeffs = [[1, 1, 5], [3, 2, 12]]
-results = tableua(objective, coeffs)
+coeffs = [objective, [1, 1, 5], [3, 2, 12]]
+results = tableua(coeffs)
